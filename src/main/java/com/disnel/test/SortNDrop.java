@@ -12,6 +12,7 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.model.IModel;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.wicket.Component;
@@ -23,8 +24,8 @@ public class SortNDrop extends WebPage
 {
 	private static final long serialVersionUID = 1L;
 
-	private static final List<String> items = Arrays.asList(
-			"One", "Two", "Three", "Four", "Five", "Six", "Seven");
+	private static final List<String> items = new LinkedList<>(Arrays.asList(
+			"One", "Two", "Three", "Four", "Five", "Six", "Seven")); 
 	
 	public SortNDrop(final PageParameters parameters)
 	{
