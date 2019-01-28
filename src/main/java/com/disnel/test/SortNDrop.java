@@ -3,6 +3,8 @@ package com.disnel.test;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.googlecode.wicket.jquery.core.IJQueryWidget.JQueryWidget;
+import com.googlecode.wicket.jquery.ui.interaction.draggable.DraggableAdapter;
+import com.googlecode.wicket.jquery.ui.interaction.draggable.DraggableBehavior;
 import com.googlecode.wicket.jquery.ui.interaction.droppable.DroppableAdapter;
 import com.googlecode.wicket.jquery.ui.interaction.droppable.DroppableBehavior;
 import com.googlecode.wicket.jquery.ui.interaction.sortable.Sortable;
@@ -42,6 +44,9 @@ public class SortNDrop extends WebPage
 					protected void populateItem(ListItem<String> item)
 					{
 						item.add(new Label("content", item.getModelObject()));
+						
+						// If I uncomment this, drop does work, but Sortable don't
+						//item.add(new DraggableBehavior(new DraggableAdapter()));
 					}
 				};
 			}
